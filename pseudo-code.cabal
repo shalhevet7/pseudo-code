@@ -20,6 +20,6 @@ executable haskell
     main-is:          Main.hs
     other-modules: AST Evaluator Lexer Parser Runtime Token
     -- other-extensions:
-    build-depends:    base ^>=4.18.3.0
+    build-depends:    base >=4.18 && <4.21
     hs-source-dirs:   app src
     default-language: Haskell2010
