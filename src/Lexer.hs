@@ -35,7 +35,15 @@ lexer (c:cs)
                 span (/= '"') cs
         in
             TString str : lexer (tail rest)
-
+    
+    | c == '#' =
+        let
+            -- Consume characters until the newline
+            (_, rest) =
+                span (/= '\n') cs
+        in
+            lexer rest
+            
     | c == '+' =
         TPlus : lexer cs
 
